@@ -1,9 +1,6 @@
 package TestClasses;
 
 import bankAccount.Users;
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
-
-import java.util.Scanner;
 
 public class TransferDifferentAccount {
 

@@ -34,7 +34,5 @@ public class ConsoleApp {
             Thread.sleep(30);
             System.out.printf("\r%s %s ", DisplayBar(i), i + "%");
         }
-
-        progressBar(100,0,0,100);
     }
 }

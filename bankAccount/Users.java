@@ -114,12 +114,12 @@ public class Users {
 
         if(marrigeStatus.equals("married")){
             Scanner dp = new Scanner(System.in);
-            System.out.println("Do you want to add add your relative?");
+            System.out.print("Do you want to add add your relative: ");
             String answer = dp.nextLine();
             if(answer.equalsIgnoreCase("Yes")){
-                System.out.println("What is your relative name?");
+                System.out.print("What is your relative name: ");
                 String rname = dp.nextLine();
-                System.out.println("Date of birth relative?");
+                System.out.print("Date of birth relative: ");
                 String age = dp.nextLine();
                 AddRelative a1 = new AddRelative(rname , age);
                 relativeName =a1.fullName;
@@ -335,7 +335,7 @@ public class Users {
 //--------------------------------------------------------------------------------------------------
 
 
- public void transfer(Users user1, Users users2) {
+ public void transfer(Users user1, Users users2) throws InterruptedException {
      Scanner oku=new Scanner(System.in);
      Scanner okuInt=new Scanner(System.in);
      System.out.print("Do you want to transfer between your accounts or different user: ");
@@ -344,10 +344,18 @@ public class Users {
          System.out.print("How much do you want to deposit: ");
          int amount=okuInt.nextInt();
          Account.transferToOwnAccount(user1,amount);
+         ConsoleApp.loader();
+         Thread.sleep(1000);
+         System.out.println("\nTransaction is completed successfully");
+         Thread.sleep(1000);
      } else {
          System.out.print("How much do you want to deposit: ");
          int amount=okuInt.nextInt();
          Account.transferOtherUser(user1,users2,amount);
+         ConsoleApp.loader();
+         Thread.sleep(1000);
+         System.out.println("\nTransaction is completed successfully");
+         Thread.sleep(1000);
      }
  }
 
@@ -364,21 +372,23 @@ public class Users {
                 ......
 
      */
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLUE = "\u001B[34m";
 
     @Override
     public String toString() {
         return "\n" +
-                " name=" + name +"\n" +
-                " password=" + password +"\n" +
-                " dateOfBirth=" + dateOfBirth +"\n" +
-                " marrigeStatus=" + marrigeStatus +"\n" +
-                " relativeName=" + relativeName + "\n" +
-                " relativeAge=" + relativeAge +"\n" +
-                " isTransferedSuceesfully=" + isTransferedSuceesfully +"\n" +
-                " accountNumber=" + accountNumber +"\n"+
-                " amountAccount1=" + amountAccount1 +"\n"+
-                " accountNumber2=" + accountNumber2 +"\n"+
-                " amountAccount2=" + amountAccount2;
+                ANSI_RESET +" Name                      :" +ANSI_BLUE + name +ANSI_RESET +"\n" +
+                " Password                  :" +ANSI_BLUE + password +ANSI_RESET  +"\n" +
+                " Date Of Birth             :" +ANSI_BLUE + dateOfBirth +ANSI_RESET +"\n" +
+                " Marrige Status            :" +ANSI_BLUE + marrigeStatus +ANSI_RESET +"\n" +
+                " Relative Name             :" +ANSI_BLUE + relativeName +ANSI_RESET + "\n" +
+                " Relative Age              :" +ANSI_BLUE + relativeAge +ANSI_RESET +"\n" +
+                " is Transfered Suceesfully :" +ANSI_BLUE + isTransferedSuceesfully +ANSI_RESET +"\n" +
+                " AccountNumber             :" +ANSI_BLUE + accountNumber +ANSI_RESET +"\n"+
+                " Amount of Account 1       :" +ANSI_BLUE + amountAccount1 +ANSI_RESET +"\n"+
+                " Account Number 2          :" +ANSI_BLUE + accountNumber2 +ANSI_RESET +"\n"+
+                " Amount of Account 2       :" +ANSI_BLUE + amountAccount2 +ANSI_RESET;
     }
 /*
 

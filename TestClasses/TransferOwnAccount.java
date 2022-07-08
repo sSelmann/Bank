@@ -5,7 +5,7 @@ import bankAccount.Users;
 public class TransferOwnAccount {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         Users u1 = new Users("Steven" , "Gerard", "10/02/2000", "married" ,1000 , 2000);
         u1.CheckMariageStatus();

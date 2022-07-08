@@ -80,7 +80,9 @@ public class Account {
             int yuzde2=(int)(transferAmount*0.02);
             transferAmount-=yuzde2;
             sendingUser.amountAccount1=withDraw(sendingUser.amountAccount1,transferAmount);
-            sendingUser.amountAccount2=deposit(receivingUser.amountAccount1,transferAmount);
+            receivingUser.amountAccount1=deposit(receivingUser.amountAccount1,transferAmount);
+            sendingUser.isTransferedSuceesfully="successfully";
+            receivingUser.isTransferedSuceesfully="successfully";
             return "Transaction is completed successfully";
         }
     }
@@ -141,7 +143,6 @@ public class Account {
                 usr.amountAccount1=withDraw(usr.amountAccount1,transferAmount);
                 usr.amountAccount2=deposit(usr.amountAccount2,transferAmount);
                 usr.isTransferedSuceesfully="successfully";
-                System.out.println("Transaction is completed successfully");
                 return usr.isTransferedSuceesfully;
             }
         }

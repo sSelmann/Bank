@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class TransferDifferentAccount {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         Users u1 = new Users("Christiano" , "Ronaldo", "10/02/2000", "married" ,1000 , 2000);
 
